@@ -1,0 +1,19 @@
+{
+  "name": "EP-PROJECT",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  },
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

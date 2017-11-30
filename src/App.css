@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Cover, .Disk, .Booklet {
+  border: 1px black solid;
+  width: 70vw;
+  height: 35vh;
+  margin: 25px auto;
+}
+
+.Cover, .Disk, .Booklet {
+  background-color: black;
+  color: white;
+  font-size: 10vw;
+}
+
+.Disk {
+  border-radius: 35vw;
+}
+
+.Page {
+  border: 1px black dotted;
+}
+
+.Booklet, .Disk {
+	visibility: hidden;
+}
+
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;
+
+	animation-duration: .5s;
+	-webkit-animation-duration: .5s;
+
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
