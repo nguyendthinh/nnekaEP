@@ -37,6 +37,9 @@
 
 .Disk {
   border-radius: 35vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .Page {
@@ -78,8 +81,17 @@
 	}
 }
 
+/*Disk Component*/
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#first {
+  position:relative;
+  width:267px;
+  height:25px;
+  overflow:hidden;
+}
+
+#second {
+  position:absolute;
+  top:-276px;
+  left:-5px
 }
