@@ -7,7 +7,7 @@ class Booklet extends Component {
     return (
       <div style={this.props.divStyle} className={`Booklet ${this.props.currentClass}`}>
         <Page></Page>
-        Booklet
+          Booklet
         <Page></Page>
       </div>
     );

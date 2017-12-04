@@ -17,17 +17,21 @@ class Disk extends Component {
   }
 
   music(){
-    var audio = document.getElementById('audio')
+    var audio = document.getElementById('audio');
+    var spinDiv = document.getElementById('spinDiv');
     if (this.state.play === false) {
       this.setState({
         play: true
       })
       audio.play()
+      spinDiv.classList.remove('stopSpin');
+      spinDiv.classList.add('spin');
     } else {
       this.setState({
         play: false
       })
       audio.pause()
+      spinDiv.classList.add('stopSpin');
     }
   }
 
@@ -42,16 +46,16 @@ class Disk extends Component {
           currentSong: this.trackList[newSong]
         })
         setTimeout( function() {
-                        audio.play();
-                    }, 1);
+          audio.play();
+        }, 1);
       } else if (this.state.trackTracker === 1) {
         this.setState({
           currentSong: mp3_file,
           trackTracker: 0
         })
         setTimeout( function() {
-                        audio.play();
-                    }, 1);
+          audio.play();
+        }, 1);
       }
   }
 
@@ -61,6 +65,7 @@ class Disk extends Component {
 
     return (
       <div style={this.props.divStyle} className={`Disk ${this.props.currentClass}`}>
+        <div id="spinDiv"></div>
         <div>
           {this.state.play === false ? (
             <div onClick={this.music.bind(this)} className="glyphicon glyphicon-play"></div>

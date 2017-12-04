@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Cover from './Cover.js'
 import Disk from './Disk.js'
 import Booklet from './Booklet.js'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Nav from './Nav.js'
 
 class App extends Component {
 
@@ -15,10 +14,21 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    window.addEventListener('scroll', function(){
+
+      console.log(window.screenY)
+    })
+  }
+
   showContent(){
     this.setState({
       currentClass: 'slideDown'
     })
+  }
+
+  test(){
+    console.log(window.innerHeight)
   }
 
   render() {
@@ -30,10 +40,18 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Nav />
         <Cover showContent={this.showContent.bind(this)}/>
+        <Disk divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
 
-          <Disk divStyle={divStyle} currentClass={this.state.currentClass}/>
-          <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
       </div>
     );
   }

@@ -40,6 +40,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: transparent;
+  border: none;
 }
 
 .Page {
@@ -94,4 +96,44 @@
   position:absolute;
   top:-276px;
   left:-5px
+}
+
+audio {
+  opacity: 0;
+}
+
+#spinDiv {
+  position: absolute;
+    z-index: -1;
+    border-radius: 35vw;
+    width: 70vw;
+    height: 35vh;
+    margin: 25px auto;
+    margin-top: -1px;
+    background: -webkit-linear-gradient(red, yellow);
+}
+
+.spin {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  -ms-animation: spin 2s linear infinite;
+  -o-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.stopSpin {
+  -webkit-animation-play-state: paused !important;
+  -moz-animation-play-state: paused !important; 
+  -ms-animation-play-state: paused !important;
+  -o-animation-play-state: paused !important;
+  animation-play-state: paused !important;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
