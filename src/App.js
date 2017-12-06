@@ -5,6 +5,9 @@ import Disk from './Disk.js'
 import Booklet from './Booklet.js'
 import Nav from './Nav.js'
 
+import mp3_file from './audio/SampleOne.mp3'
+import mp3_file2 from './audio/SampleTwo.mp3'
+
 class App extends Component {
 
   constructor(props){
@@ -12,8 +15,12 @@ class App extends Component {
     this.state = {
       currentClass: '',
       navClass: '',
-      play: false
+      play: false,
+      trackTracker: 0,
+      currentSong: mp3_file
     }
+    this.trackList = [mp3_file, mp3_file2]
+
   }
 
   componentDidMount(){
@@ -69,6 +76,61 @@ class App extends Component {
     }
   }
 
+  nextTrack(){
+    if (this.state.trackTracker === 1) {
+      return;
+    }
+    var audio = document.getElementById('audio');
+    audio.pause()
+    var changeSong = this.state.trackTracker + 1;
+    this.setState({
+      trackTracker: changeSong,
+      currentSong: this.trackList[changeSong]
+    })
+    setTimeout( function() {
+      audio.play();
+    }, 1);
+  }
+
+  backTrack(){
+    if (this.state.trackTracker === 0) {
+      return;
+    }
+    var audio = document.getElementById('audio');
+    audio.pause()
+    var changeSong = this.state.trackTracker - 1;
+    this.setState({
+      trackTracker: changeSong,
+      currentSong: this.trackList[changeSong]
+    })
+    setTimeout( function() {
+      audio.play();
+    }, 1);
+  }
+
+  changeTrack(){
+    var audio = document.getElementById('audio');
+
+      if (this.state.trackTracker === 0) {
+        var newSong = this.state.trackTracker + 1;
+        this.setState({
+          trackTracker: newSong,
+          currentSong: this.trackList[newSong]
+        })
+        setTimeout( function() {
+          audio.play();
+        }, 1);
+      } else if (this.state.trackTracker === 1) {
+        this.setState({
+          currentSong: mp3_file,
+          trackTracker: 0
+        })
+        setTimeout( function() {
+          audio.play();
+        }, 1);
+      }
+  }
+
   render() {
 
     const divStyle = {
@@ -78,9 +140,24 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Nav play={this.state.play} music={this.music.bind(this)} navClass={this.state.navClass}/>
+
+        <Nav nextTrack={this.nextTrack.bind(this)}
+        backTrack={this.backTrack.bind(this)}
+        play={this.state.play}
+        music={this.music.bind(this)}
+        navClass={this.state.navClass}/>
+
         <Cover showContent={this.showContent.bind(this)}/>
-        <Disk play={this.state.play} music={this.music.bind(this)} divStyle={divStyle} currentClass={this.state.currentClass}/>
+
+        <Disk play={this.state.play}
+        nextTrack={this.nextTrack.bind(this)}
+        backTrack={this.backTrack.bind(this)}
+        music={this.music.bind(this)}
+        changeTrack={this.changeTrack.bind(this)}
+        divStyle={divStyle}
+        currentClass={this.state.currentClass}
+        currentSong={this.state.currentSong}/>
+
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
