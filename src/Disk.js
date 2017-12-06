@@ -9,30 +9,10 @@ class Disk extends Component {
   constructor(props){
     super(props)
     this.state = {
-      play: false,
       trackTracker: 0,
       currentSong: mp3_file
     }
     this.trackList = [mp3_file, mp3_file2]
-  }
-
-  music(){
-    var audio = document.getElementById('audio');
-    var spinDiv = document.getElementById('spinDiv');
-    if (this.state.play === false) {
-      this.setState({
-        play: true
-      })
-      audio.play()
-      spinDiv.classList.remove('stopSpin');
-      spinDiv.classList.add('spin');
-    } else {
-      this.setState({
-        play: false
-      })
-      audio.pause()
-      spinDiv.classList.add('stopSpin');
-    }
   }
 
   changeTrack(){
@@ -66,16 +46,19 @@ class Disk extends Component {
     return (
       <div style={this.props.divStyle} className={`Disk ${this.props.currentClass}`}>
         <div id="spinDiv"></div>
+        <div className="glyphicon glyphicon-backward"></div>
         <div>
-          {this.state.play === false ? (
-            <div onClick={this.music.bind(this)} className="glyphicon glyphicon-play"></div>
+          {this.props.play === false ? (
+            <div onClick={this.props.music} className="glyphicon glyphicon-play"></div>
           ) : (
-            <div onClick={this.music.bind(this)} className="glyphicon glyphicon-pause"></div>
+            <div onClick={this.props.music} className="glyphicon glyphicon-pause"></div>
 
           )}
 
         </div>
-        <audio onEnded={this.changeTrack.bind(this)} id="audio" src={this.state.currentSong} controls></audio>
+        <div className="glyphicon glyphicon-forward"></div>
+
+        <audio onEnded={this.changeTrack.bind(this)} id="audio" src={this.state.currentSong}></audio>
       </div>
     );
   }

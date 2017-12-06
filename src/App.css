@@ -46,6 +46,8 @@
 
 .Nav {
   position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 .Page {

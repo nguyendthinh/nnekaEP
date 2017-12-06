@@ -80,7 +80,7 @@ class App extends Component {
       <div className="App">
         <Nav play={this.state.play} music={this.music.bind(this)} navClass={this.state.navClass}/>
         <Cover showContent={this.showContent.bind(this)}/>
-        <Disk play={this.state.play} divStyle={divStyle} currentClass={this.state.currentClass}/>
+        <Disk play={this.state.play} music={this.music.bind(this)} divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
