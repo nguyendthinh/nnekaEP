@@ -48,6 +48,8 @@
   position: fixed;
   text-align: center;
   width: 100%;
+  background-color: black;
+  top: 0;
 }
 
 .Page {
@@ -58,7 +60,7 @@
 	visibility: hidden;
 }
 
-.slideDown{
+.slideDown {
 	animation-name: slideDown;
 	-webkit-animation-name: slideDown;
 
