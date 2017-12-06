@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Cover extends Component {
 

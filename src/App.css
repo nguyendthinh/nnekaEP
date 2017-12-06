@@ -44,11 +44,15 @@
   border: none;
 }
 
+.Nav {
+  position: fixed;
+}
+
 .Page {
   border: 1px black dotted;
 }
 
-.Booklet, .Disk {
+.Booklet, .Disk, .Nav {
 	visibility: hidden;
 }
 
@@ -62,7 +66,16 @@
 	animation-timing-function: ease;
 	-webkit-animation-timing-function: ease;
 
-	visibility: visible !important;
+	visibility: visible;
+}
+
+.slideUp {
+  -webkit-animation: slideUp .5s ease;
+  -moz-animation: slideUp .5s ease;
+  -ms-animation: slideUp .5s ease;
+  -o-animation: slideUp .5s ease;
+  animation: slideUp .5s ease;
+  visibility: visible;
 }
 
 @keyframes slideDown {
@@ -80,6 +93,24 @@
 	}
 	100% {
 		transform: translateY(0%);
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(-100%);
 	}
 }
 
@@ -123,7 +154,7 @@ audio {
 
 .stopSpin {
   -webkit-animation-play-state: paused !important;
-  -moz-animation-play-state: paused !important; 
+  -moz-animation-play-state: paused !important;
   -ms-animation-play-state: paused !important;
   -o-animation-play-state: paused !important;
   animation-play-state: paused !important;
