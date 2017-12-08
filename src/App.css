@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -24,32 +25,27 @@
 
 .Cover, .Disk, .Booklet {
   border: 1px black solid;
-  width: 70vw;
-  height: 35vh;
+  width: 80vw;
+  height: 8em;
   margin: 25px auto;
-}
-
-.Cover, .Disk, .Booklet {
   background-color: black;
   color: white;
   font-size: 10vw;
 }
 
-.Disk {
-  border-radius: 35vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: transparent;
-  border: none;
-}
-
 .Nav {
   position: fixed;
   text-align: center;
+  height: 4em;
   width: 100%;
   background-color: black;
   top: 0;
+  color: white;
+  font-size: 15px;
+}
+
+#navControls {
+  padding: 1.25em 0;
 }
 
 .Page {
@@ -58,6 +54,20 @@
 
 .Booklet, .Disk, .Nav {
 	visibility: hidden;
+}
+
+.Booklet {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .Cover, .Disk, .Booklet {
+    width: 100%;
+  }
+}
+
+.glyphicon {
+  margin-left: 10px !important;
 }
 
 .slideDown {
@@ -71,6 +81,7 @@
 	-webkit-animation-timing-function: ease;
 
 	visibility: visible;
+  display: block;
 }
 
 .slideUp {
@@ -118,13 +129,73 @@
 	}
 }
 
+/*Cover FLIP*/
+/*
+#flipContainer {
+  position: relative;
+  z-index: 1;
+  perspective: 1000;
+}
+
+#flipCover {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+
+#flipContainer:hover #flipCover {
+  transform: rotateY(180deg);
+}
+
+.Face {
+  backface-visibility: hidden;
+}
+
+.Disk.Face {
+  display: block;
+  transform: rotateY(180deg);
+
+}*/
+
+/*Cover Component*/
+
 /*Disk Component*/
+
+.Disk {
+  position: relative;
+ display: inline-block;
+ width: 85%;
+ height: 0;
+ padding: 50% 0px;
+ border-radius: 50%;
+ background-color: transparent;
+ border: none;
+ text-align: center;
+
+}
+
+#spinDiv {
+  position: absolute;
+    z-index: -1;
+    /*display: inline-block;*/
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+    border-radius: 50%;
+    margin-top: -50%;
+    background: -webkit-linear-gradient(red, yellow);
+}
+
+audio {
+  opacity: 0;
+}
 
 #first {
   position:relative;
-  width:267px;
-  height:25px;
-  overflow:hidden;
+  width: 267px;
+  height: 25px;
+  overflow: hidden;
 }
 
 #second {
@@ -133,19 +204,14 @@
   left:-5px
 }
 
-audio {
-  opacity: 0;
-}
-
-#spinDiv {
+#diskControls{
+  display: inline;
+  text-align: center;
   position: absolute;
-    z-index: -1;
-    border-radius: 35vw;
-    width: 70vw;
-    height: 35vh;
-    margin: 25px auto;
-    margin-top: -1px;
-    background: -webkit-linear-gradient(red, yellow);
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  /*padding: 100% 0;*/
 }
 
 .spin {

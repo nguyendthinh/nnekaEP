@@ -44,7 +44,7 @@ class App extends Component {
           self.setState({
             navClass: ''
           })
-        }, 500);
+        }, 400);
       }
 
     }.bind(this))
@@ -150,13 +150,13 @@ class App extends Component {
         <Cover showContent={this.showContent.bind(this)}/>
 
         <Disk play={this.state.play}
-        nextTrack={this.nextTrack.bind(this)}
-        backTrack={this.backTrack.bind(this)}
-        music={this.music.bind(this)}
-        changeTrack={this.changeTrack.bind(this)}
-        divStyle={divStyle}
-        currentClass={this.state.currentClass}
-        currentSong={this.state.currentSong}/>
+            nextTrack={this.nextTrack.bind(this)}
+            backTrack={this.backTrack.bind(this)}
+            music={this.music.bind(this)}
+            changeTrack={this.changeTrack.bind(this)}
+            divStyle={divStyle}
+            currentClass={this.state.currentClass}
+            currentSong={this.state.currentSong}/>
 
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
         <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>

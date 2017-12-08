@@ -6,7 +6,7 @@ class Cover extends Component {
   render() {
 
     return (
-      <div onClick={this.props.showContent} className="Cover">
+      <div onClick={this.props.showContent} className="Cover Face">
         Cover
 
       </div>
