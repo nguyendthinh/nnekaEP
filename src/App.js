@@ -131,6 +131,12 @@ class App extends Component {
       }
   }
 
+  flipAnimation(){
+    console.log('working')
+    var flipper = document.getElementById('flip-container')
+    flipper.classList.toggle("hover");
+  }
+
   render() {
 
     const divStyle = {
@@ -147,8 +153,8 @@ class App extends Component {
           music={this.music.bind(this)}
           navClass={this.state.navClass}/>
 
-          <div className="flip-container">
-            <div className="flipper">
+          <div id="flip-container" onClick={this.flipAnimation}>
+            <div id="flipper">
               <Cover showContent={this.showContent.bind(this)}/>
 
               <Disk play={this.state.play}

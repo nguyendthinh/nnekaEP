@@ -8,7 +8,7 @@ class Disk extends Component {
     var audio = document.getElementById('audio')
 
     return (
-      <div style={this.props.divStyle} className={`Disk Back ${this.props.currentClass}`}>
+      <div style={this.props.divStyle} className={`Disk Back`}>
         <div id="spinDiv"></div>
           <div id="diskControls">
 
