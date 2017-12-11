@@ -34,7 +34,6 @@ class App extends Component {
       } else {
         var nav = document.querySelector('.Nav.slideDown')
         if (nav === null){
-          console.log('works')
           return;
         }
         this.setState({
@@ -57,7 +56,8 @@ class App extends Component {
     })
   }
 
-  music(){
+  music(event){
+    event.stopPropagation();
     var audio = document.getElementById('audio');
     var spinDiv = document.getElementById('spinDiv');
     if (this.state.play === false) {
@@ -76,7 +76,9 @@ class App extends Component {
     }
   }
 
-  nextTrack(){
+  nextTrack(event){
+    event.stopPropagation();
+
     if (this.state.trackTracker === 1) {
       return;
     }
@@ -92,7 +94,9 @@ class App extends Component {
     }, 1);
   }
 
-  backTrack(){
+  backTrack(event){
+    event.stopPropagation();
+
     if (this.state.trackTracker === 0) {
       return;
     }
@@ -131,8 +135,9 @@ class App extends Component {
       }
   }
 
-  flipAnimation(){
-    console.log('working')
+  flipAnimation(event){
+    event.stopPropagation();
+
     var flipper = document.getElementById('flip-container')
     flipper.classList.toggle("hover");
   }
