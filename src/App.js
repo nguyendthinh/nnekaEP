@@ -141,31 +141,33 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Nav nextTrack={this.nextTrack.bind(this)}
-        backTrack={this.backTrack.bind(this)}
-        play={this.state.play}
-        music={this.music.bind(this)}
-        navClass={this.state.navClass}/>
+          <Nav nextTrack={this.nextTrack.bind(this)}
+          backTrack={this.backTrack.bind(this)}
+          play={this.state.play}
+          music={this.music.bind(this)}
+          navClass={this.state.navClass}/>
 
-        <Cover showContent={this.showContent.bind(this)}/>
+          <div className="container">
+              <Cover showContent={this.showContent.bind(this)}/>
 
-        <Disk play={this.state.play}
-            nextTrack={this.nextTrack.bind(this)}
-            backTrack={this.backTrack.bind(this)}
-            music={this.music.bind(this)}
-            changeTrack={this.changeTrack.bind(this)}
-            divStyle={divStyle}
-            currentClass={this.state.currentClass}
-            currentSong={this.state.currentSong}/>
+              <Disk play={this.state.play}
+                  nextTrack={this.nextTrack.bind(this)}
+                  backTrack={this.backTrack.bind(this)}
+                  music={this.music.bind(this)}
+                  changeTrack={this.changeTrack.bind(this)}
+                  divStyle={divStyle}
+                  currentClass={this.state.currentClass}
+                  currentSong={this.state.currentSong}/>
 
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-        <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+          </div>
 
       </div>
     );

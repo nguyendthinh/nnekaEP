@@ -24,13 +24,19 @@
 }
 
 .Cover, .Disk, .Booklet {
-  border: 1px black solid;
-  width: 80vw;
-  height: 8em;
+  width: 7.5em;
+  height: 7em;
   margin: 25px auto;
   background-color: black;
   color: white;
   font-size: 10vw;
+}
+
+@media (min-width: 800px){
+  .Cover, .Booklet {
+    width: 5.5em;
+    height: 5em;
+  }
 }
 
 .Nav {
@@ -61,9 +67,7 @@
 }
 
 @media (min-width: 768px) {
-  .Cover, .Disk, .Booklet {
-    width: 100%;
-  }
+
 }
 
 .glyphicon {
@@ -167,7 +171,7 @@
  display: inline-block;
  width: 85%;
  height: 0;
- padding: 50% 0px;
+ padding: 40% 0px;
  border-radius: 50%;
  background-color: transparent;
  border: none;
@@ -185,6 +189,12 @@
     border-radius: 50%;
     margin-top: -50%;
     background: -webkit-linear-gradient(red, yellow);
+}
+
+@media (min-width: 768px) {
+  .Disk {
+    width: 75%;
+  }
 }
 
 audio {
@@ -211,6 +221,7 @@ audio {
   top: 50%;
   left:50%;
   transform: translate(-50%, -50%);
+  width: 100%;
   /*padding: 100% 0;*/
 }
 
