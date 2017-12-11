@@ -1,6 +1,19 @@
+html {
+  height: 100%;
+  background-color: black;
+}
+
 .App {
   text-align: center;
+  font-family: Verdana;
+  background-color: black;
+  height: 100%;
+}
 
+@media (min-width: 768px) {
+  .App {
+    padding-top: auto;
+  }
 }
 
 .App-logo {
@@ -30,12 +43,19 @@
   background-color: black;
   color: white;
   font-size: 10vw;
+  border: 1px solid white;
+}
+.Disk {
+  color: black;
 }
 
-@media (min-width: 800px){
+@media (min-width: 768px){
   .Cover, .Booklet, .Disk {
     width: 5.5em;
     height: 5em;
+  }
+  #diskControls {
+    font-size: .75em;
   }
 }
 
@@ -47,7 +67,9 @@
   background-color: black;
   top: 0;
   color: white;
-  font-size: 15px;
+  border-bottom: 1px solid white;
+  font-size: 20px;
+  z-index: 3;
 }
 
 #navControls {
@@ -55,7 +77,7 @@
 }
 
 .Page {
-  border: 1px black dotted;
+  /*border: 1px black dotted;*/
 }
 
 .Booklet, .Nav {
@@ -196,7 +218,7 @@
 
 @media (min-width: 768px) {
   .Disk {
-    width: 50%;
+    width: 52%;
     padding: 2.5em 0px;
   }
 }
