@@ -6,7 +6,7 @@ class Cover extends Component {
   render() {
 
     return (
-      <div onClick={this.props.showContent} className="Cover text-center">
+      <div onClick={this.props.showContent} className="Cover Front">
         Cover
 
       </div>
