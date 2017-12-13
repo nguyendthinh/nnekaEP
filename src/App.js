@@ -78,7 +78,9 @@ class App extends Component {
 
   nextTrack(event){
     event.stopPropagation();
-
+    if (this.state.play === false) {
+      return;
+    }
     if (this.state.trackTracker === 1) {
       return;
     }
@@ -96,7 +98,9 @@ class App extends Component {
 
   backTrack(event){
     event.stopPropagation();
-
+    if (this.state.play === false) {
+      return;
+    }
     if (this.state.trackTracker === 0) {
       return;
     }

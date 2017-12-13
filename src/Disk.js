@@ -5,7 +5,6 @@ class Disk extends Component {
 
   render() {
 
-    var audio = document.getElementById('audio')
 
     return (
       <div style={this.props.divStyle} className={`Disk Back`}>
