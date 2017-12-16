@@ -50,6 +50,8 @@ html {
 }
 .Booklet {
   margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
   height: 9em;
 }
 
@@ -237,7 +239,7 @@ audio {
 #second {
   position:absolute;
   top:-276px;
-  left:-5px
+  left:-5px;
 }
 
 #diskControls{
@@ -286,12 +288,20 @@ audio {
     height: 100%;
     overflow-x: auto;
     white-space: nowrap;
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+
+@media (min-width: 768px) {
+  #scroller {
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+  }
 }
 
 #scroller div {
-    /*height: 100%;*/
-    display: inline-block;
-    outline: 1px solid blue;
+  display: inline-block;
 }
 
 #scroll-container.slideDown {
