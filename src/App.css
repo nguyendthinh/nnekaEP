@@ -88,7 +88,7 @@ html {
 	visibility: hidden;
 }
 
-.Booklet {
+.Booklet, #scroll-container {
   display: none;
 }
 
@@ -274,4 +274,26 @@ audio {
 @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
+}
+
+/*Booklet Component*/
+#scroll-container {
+    width: 100%;
+    height: 100%;
+}
+
+#scroller {
+    height: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#scroller div {
+    /*height: 100%;*/
+    display: inline-block;
+    outline: 1px solid blue;
+}
+
+#scroll-container.slideDown {
+  display: inline;
 }

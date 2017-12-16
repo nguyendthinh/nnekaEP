@@ -178,15 +178,18 @@ class App extends Component {
             </div>
           </div>
 
-
-          <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-          <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-          <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-          <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
-              <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+          <div id="scroll-container" className={this.state.currentClass}>
+            <div id="scroller">
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+                <Booklet divStyle={divStyle} currentClass={this.state.currentClass}/>
+            </div>
+          </div>
 
       </div>
     );
