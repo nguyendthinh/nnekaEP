@@ -1,6 +1,8 @@
-html {
+body, html {
   height: 100%;
   background-color: black;
+  width: 100%;
+  text-align: center;
 }
 
 .App {
@@ -8,6 +10,15 @@ html {
   font-family: Verdana;
   background-color: black;
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 768px) {
@@ -44,6 +55,7 @@ html {
   color: white;
   font-size: 10vw;
   border: 1px solid white;
+  margin-left: 30px;
 }
 .Disk {
   color: black;
@@ -61,6 +73,7 @@ html {
   #diskControls {
     font-size: .75em;
   }
+
 }
 
 .Nav {
@@ -121,19 +134,19 @@ html {
 
 @keyframes slideDown {
 	0% {
-		transform: translateY(-100%);
+		transform: translateX(-100%);
 	}
 	100% {
-		transform: translateY(0%);
+		transform: translateX(0%);
 	}
 }
 
 @-webkit-keyframes slideDown {
   0% {
-		transform: translateY(-100%);
+		transform: translateX(-100%);
 	}
 	100% {
-		transform: translateY(0%);
+		transform: translateX(0%);
 	}
 }
 
@@ -159,6 +172,7 @@ html {
 
 #flip-container {
   perspective: 1000px;
+
 }
 #flip-container.hover #flipper {
   transform: rotateY(180deg);
@@ -197,12 +211,13 @@ html {
 .Disk {
   position: relative;
   display: inline-block;
-  width: 85%;
+  /*width: 85%;*/
   padding: 4em 0px;
   border-radius: 50%;
   background-color: transparent;
   border: none;
   text-align: center;
+  /*margin: 0 auto;*/
 }
 
 #spinDiv {
@@ -218,7 +233,7 @@ html {
 
 @media (min-width: 768px) {
   .Disk {
-    width: 52%;
+    /*width: 52%;*/
     padding: 2.5em 0px;
   }
 }
